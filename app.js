@@ -1,34 +1,17 @@
-// const salaryAtHour = 80;
-// const noMoreHours = 5;
-// const noMoreDays = 5;
-//
-// const orderHours = 40;
-// const currentDay = 1;
-//
-// const xDay = 12;
-//
-// const workDays = xDay  - (noMoreDays - currentDay);
-// const totalWorkHours = workDays * noMoreHours;
-//
-// const myMoney = workDays * salaryAtHour * noMoreHours;
-// const isWellGetWork = totalWorkHours <= orderHours;
-//
-// console.log('хочу столько денег за работу: ', myMoney + '$');
-// console.log('хватит дней на работу? ', isWellGetWork);
-
-
-const contrib = 12000;
-const perc = 0.07;
-const priceHouse = 13500;
-const term = 24;
-const res = contrib * (1 + perc / 12) ** term;
-if (res > priceHouse) {
-    console.log(`Хватает денег и остаток от суммы: ${priceHouse - res}`)
-
+function credit (age, hasJob = false) {
+    switch (true) {
+        case age > 24 && hasJob:
+            return 500;
+        case age > 24:
+            return 100;
+        default:
+            return 0;
+    }
 }
-else
-{
-    console.log(`Не хватает денег. Накопили: ${res}`)
-
-
+function canBuy(productPrise,age,money,hasJob = false) {
+    const  creditMoney = credit(age,hasJob);
+    return productPrise < money + creditMoney;
 }
+
+console.log(canBuy(2000,25,1000));
+
