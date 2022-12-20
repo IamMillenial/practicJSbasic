@@ -4,9 +4,8 @@ const showUrlData = (url) => {
     const [domainName, ...path] = domenUrl.split("/");
     const otherPath = '/' + path.join('/')
 
-    return `
-    - Протокол (${protocol})
+    console.log(`    - Протокол (${protocol})
     - Доменное имя (${domainName})
-    - Путь внутри сайта (${otherPath})`
+    - Путь внутри сайта (${otherPath})`)
 }
-console.log(showUrlData(url));
+showUrlData(url)
