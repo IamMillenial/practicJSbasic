@@ -1,17 +1,35 @@
-function credit (age, hasJob = false) {
-    switch (true) {
-        case age > 24 && hasJob:
-            return 500;
-        case age > 24:
-            return 100;
-        default:
-            return 0;
+const tasks = ['Задача 1'];
+const addTask = (newTaskName) => {
+    tasks.push(newTaskName)
+}
+
+addTask('zadach 2')
+
+console.log(tasks);
+
+const deleteTask = (taskName) => {
+    let myInd = tasks.indexOf(taskName)
+    if (myInd !== -1) {
+        tasks.splice(myInd,1)
     }
 }
-function canBuy(productPrise,age,money,hasJob = false) {
-    const  creditMoney = credit(age,hasJob);
-    return productPrise < money + creditMoney;
+
+deleteTask('Задача 1');
+
+console.log(tasks);
+
+addTask('Задача 777')
+
+
+console.log('***',tasks);
+
+// ['zadach 2', 'Задача 777']
+const transTask = (taskName) => {
+    deleteTask(taskName)
+    tasks.unshift(taskName)
 }
 
-console.log(canBuy(2000,25,1000));
+transTask('Задача 777')
 
+
+console.log(tasks);
