@@ -1,11 +1,7 @@
-const url = 'https://purpleschool.ru/course/javascript';
-const showUrlData = (url) => {
-    const [protocol, domenUrl] = url.split('://');
-    const [domainName, ...path] = domenUrl.split("/");
-    const otherPath = '/' + path.join('/')
-
-    console.log(`    - Протокол (${protocol})
-    - Доменное имя (${domainName})
-    - Путь внутри сайта (${otherPath})`)
+const array = ['!', 'JS', 'люблю', 'Я'];
+console.log(array);
+const res = [];
+for (let i = array.length-1; i >= 0; i=i-1) {
+res.push(array[i])
 }
-showUrlData(url)
+console.log(res.join(' '));
