@@ -1,12 +1,8 @@
-const arr =[2, 4, 4, 10];
+const arr = [2,4,4,10,20];
+function some(array, element) {
+    const res = array.find(el => el === element);
+    return  res === undefined ? false : true;
+}
 
-const avg = arr.reduce((acc, value, i) => {
-    if (i != arr.length-1) {
-        return acc + value;
-    } else {
-        return (acc + value) / arr.length
-    }
-    }, 0);
-
-console.log(avg)
-
+console.log(some(arr, 0));
+console.log(arr.some(el => el === 0));
