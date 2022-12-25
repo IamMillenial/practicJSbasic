@@ -1,8 +1,8 @@
-const arr = [2,4,4,10,20];
-function some(array, element) {
-    const res = array.find(el => el === element);
-    return  res === undefined ? false : true;
-}
+const username = 'Вася aka Terminator Perdinator Пупкин';
+const arr = username.split(' ');
+const firstName =arr[0];
+const lastName =arr[4];
+console.log(arr);
 
-console.log(some(arr, 0));
-console.log(arr.some(el => el === 0));
+console.log(firstName);
+console.log(lastName);
