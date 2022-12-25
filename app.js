@@ -1,23 +1,34 @@
-const users = [
-    {
-        name: 'Вася',
-        surname: 'Пупкин',
-        age: 30,
-        skills: ['Разработка', 'DevOps'],
-
+const wallet = {
+   balance: 0,
+   operation: [],
+    increse:function (reason, sum) {
+        this.balance += sum;
+        this.operation.push({
+            reason: reason,
+            sum: sum
+        })
+        return true;
     },
-    {
-        name: 'Катя',
-        surname: 'Белова',
-        age: 18 ,
-        skills: ['Дизайн']
-    }
-];
+    decrease: function (reason, sum) {
+       if (this.balance <sum) {
+           console.log('недостаточно баланса');
+           return false;
+       }
+       this.balance -= sum;
+       this.operation.push({
+         reason: reason,
+         sum: -sum
+        })
+        return true;
+    },
+   getoperation: function () {
+       return this.operation.length;
+   }
+}
 
-const userData = users.map(user => {
-    return {
-    fullName: `${user.name} ${user.surname}` ,
-        skillNum: user.skills.length
-    };
-})
-console.log(userData);
+console.log(wallet.increse('зп', '1000'));
+console.log(wallet.getoperation());
+
+
+
+
