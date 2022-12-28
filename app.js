@@ -1,14 +1,23 @@
-function removePassword(reset) {
-         if (reset) {
-         this.password = undefined;
-         } else {
-         this.password = '1';
-         }
+'use strict'
+const userInfo = {
+    balance: 0,
+    operations: 0,
+    increse (sum) {
+        this.balance += sum;
+        this.operations ++;
     }
-const user = {
-    login: 'rfrf@',
-    password: '12345'
 };
-const resetUserPassword = removePassword.bind(user,true);
-resetUserPassword();
-console.log(user);
+function user()  {
+    const userObj = { ...userInfo }
+    return function () {
+        return userObj;
+    }
+}
+const user1 = user();
+user1().increse(100);
+user1().increse(100);
+console.log(user1());
+
+const user2 = user();
+user2().increse(100);
+console.log(user2());
