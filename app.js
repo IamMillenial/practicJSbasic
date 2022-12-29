@@ -1,23 +1,6 @@
-'use strict'
-const userInfo = {
-    balance: 0,
-    operations: 0,
-    increse (sum) {
-        this.balance += sum;
-        this.operations ++;
-    }
-};
-function user()  {
-    const userObj = { ...userInfo }
-    return function () {
-        return userObj;
-    }
-}
-const user1 = user();
-user1().increse(100);
-user1().increse(100);
-console.log(user1());
+'use strict';
 
-const user2 = user();
-user2().increse(100);
-console.log(user2());
+const panelText = document.querySelector('.panel').innerText;
+console.log(panelText);
+document.querySelector('.panel').innerText = 'New text';
+document.querySelector('.input').value = 'Text';
